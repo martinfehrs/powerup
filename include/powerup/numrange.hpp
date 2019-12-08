@@ -249,7 +249,8 @@ namespace pup
     template <
         typename ValueType,
         typename StepType,
-        typename = std::enable_if_t<details::all_integrals_v<ValueType, StepType>>
+        typename = std::enable_if_t<details::all_integrals_v<ValueType, StepType>>,
+        typename = std::enable_if_t<details::equally_signed_v<ValueType, StepType>>
     >
     constexpr auto inclusive_range(ValueType first, ValueType last, StepType step)
     {
@@ -278,7 +279,8 @@ namespace pup
     template <
         typename ValueType,
         typename StepType,
-        typename = std::enable_if_t<details::all_integrals_v<ValueType, StepType>>
+        typename = std::enable_if_t<details::all_integrals_v<ValueType, StepType>>,
+        typename = std::enable_if_t<details::equally_signed_v<ValueType, StepType>>
     >
     constexpr auto exclusive_range(ValueType first, ValueType last, StepType step)
     {

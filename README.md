@@ -70,7 +70,9 @@ for(auto i : pup::exclusive_range(10, 1, -2))
 ```
 10 8 6 4 2
 ```
-But be prepared. If you don't specify the step it defaults to 1. Because of this the following code is invlid. It leads to an assertion as long as NDEBUG isn't defined:
+But be careful! If you don't specify the step it defaults to 1. Because of this the following code
+is invlid. It leads to an assertion as long as NDEBUG isn't defined. Otherwise it runs for a long
+time, depending on the types size:
 ```c++
 for(auto i : pup::exclusive_range(10, 1))
 {

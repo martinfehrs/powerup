@@ -25,6 +25,8 @@ factory constructs an exclusive range for a container.
 
 ### Usage
 
+For the sake of convenience all the following examples show only exclusive_range and index_range, because inclusive_range behaves like exclusive_range with the upper bound included.
+
 #### Counted loop
 Instead of using a traditional for loop, you can use exlusive_range. This allows to use of auto for the counting variable:
 
@@ -37,19 +39,7 @@ for(auto i : pup::exclusive_range(10))
 ```
 0 1 2 3 4 5 6 7 8 9
 ```
-The inclusive range is neary identical. The only difference is, that the upper bound is included.
-
-```c++
-for(auto i : pup::inclusive_range(10))
-{
-  std::cout << i << ' ';
-}
-```
-```
-0 1 2 3 4 5 6 7 8 9 10
-```
-For the sake of convenience only exlusive_range is shown in the following examples.
-If you want to specify a lower bound, too:
+If you want you can specify a lower bound:
 
 ```c++
 for(auto i : pup::exclusive_range(1, 10))
@@ -59,4 +49,14 @@ for(auto i : pup::exclusive_range(1, 10))
 ```
 ```
 1 2 3 4 5 6 7 8 9
+```
+And you can specify a step size:
+```c++
+for(auto i : pup::exclusive_range(1, 10, 2))
+{
+  std::cout << i << ' ';
+}
+```
+```
+1 3 5 7 9
 ```

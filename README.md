@@ -70,7 +70,7 @@ for(auto i : pup::exclusive_range(10, 1, -2))
 ```
 10 8 6 4 2
 ```
-But be careful! If you don't specify the step it defaults to 1. Because of this the following code
+Be careful! If you don't specify the step it defaults to 1. Because of this the following code
 is invalid. It leads to an assertion as long as NDEBUG isn't defined. Otherwise it runs for a long
 time, depending on the type's size:
 ```c++
@@ -82,3 +82,19 @@ for(auto i : pup::exclusive_range(10, 1))
 ```
 Assertion `step > 0 && last >= first || step < 0 && last <= first' failed
 ```
+But what is the index's type? It has the same type as the passed in lower and upper bound. And what
+if they have different types? They cannot. If the types aren't equal the code isn't compilable.
+```c++
+for(auto i : pup::exclusive_range('a', 10))
+{
+  std::cout << i << ' ';
+}
+```
+```
+error: no matching function for call to ‘inclusive_range(char, int)’
+     for(const auto i : pup::inclusive_range('a', 10))
+...
+note: deduced conflicting types for parameter ‘ValueType’ (‘char’ and ‘int’)
+     for(const auto i : pup::inclusive_range('a', 10))
+```
+

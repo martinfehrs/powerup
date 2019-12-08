@@ -9,19 +9,20 @@ They can be found in the numranges.hpp header.
 
 ### Description
 
-There are two different number range types:
+There are two different number range types and a corresponding iterator type:
 
 1. InclusiveRange
 2. ExclusiveRange
+3. RangeIterator
 
-Instead of constructing them directly, you should use one of the following factory functions:
+Most of the time you aren't using these types directly, but of the following factory functions:
 
 1. inclusive_range
 2. exclusive_range
 3. index_range
 
-The first two factories simply construct the the corresponding range type. The third
-factory constructs an exclusive range for a container.
+The first two factories simply construct the the corresponding range types. The third
+factory constructs an exclusive range of container indices.
 
 ### Usage
 

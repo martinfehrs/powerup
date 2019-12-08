@@ -40,7 +40,7 @@ for(auto i : pup::exclusive_range(10))
 The inclusive range is neary identical. The only difference is, that the upper bound is included.
 
 ```c++
-for(auto i : pup::inclusive range(10))
+for(auto i : pup::inclusive_range(10))
 {
   std::cout << i << ' ';
 }

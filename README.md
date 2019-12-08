@@ -122,6 +122,7 @@ for(auto i : pup::exclusive_range(vec.size())
 ```
 0 1 2 3 4
 ...
+```
 The same can be achieved with the shortcut index_range:
 ```c++
 std::vector<int> vec{ 1, 2, 3, 4, 5 };

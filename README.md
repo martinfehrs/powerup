@@ -60,3 +60,23 @@ for(auto i : pup::exclusive_range(1, 10, 2))
 ```
 1 3 5 7 9
 ```
+Finally you can count downwards:
+```c++
+for(auto i : pup::exclusive_range(10, 1, -2))
+{
+  std::cout << i << ' ';
+}
+```
+```
+10 8 6 4 2
+```
+But be prepared. If you don't specify the step it defaults to 1. Because of this the following code is invlid. It leads to an assertion as long as NDEBUG isn't defined:
+```c++
+for(auto i : pup::exclusive_range(10, 1))
+{
+  std::cout << i << ' ';
+}
+```
+```
+Assertion `step > 0 && last >= first || step < 0 && last <= first' failed
+```

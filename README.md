@@ -25,8 +25,6 @@ factory constructs an exclusive range for a container.
 
 ### Usage
 
-Header is `numranges.hpp
-
 #### Counted loop
 Instead of using a traditional for loop, you can use exlusive_range. This allows to use of auto for the counting variable:
 
@@ -38,4 +36,15 @@ for(auto i : pup::exclusive_range(10))
 ```
 ```
 0 1 2 3 4 5 6 7 8 9
+```
+The inclusive range is neary identical. The only difference is, that the upper bound is included.
+
+```c++
+for(auto i : pup::inclusive range(10))
+{
+  std::cout << i << ' ';
+}
+```
+```
+0 1 2 3 4 5 6 7 8 9 10
 ```

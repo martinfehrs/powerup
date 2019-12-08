@@ -110,7 +110,7 @@ error: no matching function for call to ‘inclusive_range(int, int, unsigned in
      for(const auto i : pup::inclusive_range(1, 10, 1U))
 ...
 ```
-You can use exclusive_range for producing container indices:
+You can produces container indices while use exclusive_range:
 ```c++
 std::vector<int> vec{ 1, 2, 3, 4, 5 };
 

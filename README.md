@@ -48,3 +48,15 @@ for(auto i : pup::inclusive_range(10))
 ```
 0 1 2 3 4 5 6 7 8 9 10
 ```
+For the sake of convenience only exlusive_range is shown in the following examples.
+If you want to specify a lower bound, too:
+
+```c++
+for(auto i : pup::exclusive_range(1, 10))
+{
+  std::cout << i << ' ';
+}
+```
+```
+1 2 3 4 5 6 7 8 9
+```

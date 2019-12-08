@@ -94,7 +94,16 @@ for(auto i : pup::exclusive_range('a', 10))
 error: no matching function for call to ‘inclusive_range(char, int)’
      for(const auto i : pup::inclusive_range('a', 10))
 ...
-note: deduced conflicting types for parameter ‘ValueType’ (‘char’ and ‘int’)
-     for(const auto i : pup::inclusive_range('a', 10))
 ```
-
+The step type can be different, but it isn't allowed to mix signed and unsigned types.
+```c++
+for(auto i : pup::exclusive_range(1, 10, 1U))
+{
+  std::cout << i << ' ';
+}
+```
+```
+error: no matching function for call to ‘inclusive_range(int, int, unsigned int)’
+     for(const auto i : pup::inclusive_range(1, 10, 1U))
+...
+```

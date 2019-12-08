@@ -211,8 +211,9 @@ namespace pup
         constexpr const_iterator cend() const
         {
             const auto dist = last - first;
+            const auto extra = (dist % step) ? 1 : 0;
 
-            return { static_cast<value_type>(first + (dist / step) * step), step };
+            return { static_cast<value_type>(first + ((dist / step) + extra) * step), step };
         }
 
         constexpr const_iterator begin() const

@@ -121,7 +121,6 @@ for(auto i : pup::exclusive_range(vec.size())
 ```
 ```
 0 1 2 3 4
-...
 ```
 The same can be achieved with the shortcut index_range:
 ```c++
@@ -131,4 +130,7 @@ for(auto i : pup::index_range(vec))
 {
   std::cout << i << ' ';
 }
+```
+```
+0 1 2 3 4
 ```

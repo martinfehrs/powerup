@@ -1,4 +1,5 @@
-# PowerUp!
+<h1 style="display:inline">PowerUp</h1><img style="display:inline" width="30px" src="https://github.com/martinfehrs/powerup/blob/master/Retro-Block-Exclamation-icon.png">
+
 A general-purpose header-only library extendending the C++14 standard library.
 
 This library is completely standard library based. There are no further dependencies.

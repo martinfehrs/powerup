@@ -47,9 +47,7 @@ If you want you can specify a lower bound:
 
 ```c++
 for(auto i : pup::exclusive_range(1, 10))
-{
-  std::cout << i << ' ';
-}
+    std::cout << i << ' ';
 ```
 ```
 1 2 3 4 5 6 7 8 9
@@ -57,9 +55,7 @@ for(auto i : pup::exclusive_range(1, 10))
 And you can specify a step size:
 ```c++
 for(auto i : pup::exclusive_range(1, 10, 2))
-{
-  std::cout << i << ' ';
-}
+    std::cout << i << ' ';
 ```
 ```
 1 3 5 7 9
@@ -67,9 +63,7 @@ for(auto i : pup::exclusive_range(1, 10, 2))
 Finally you can count downwards:
 ```c++
 for(auto i : pup::exclusive_range(10, 1, -2))
-{
-  std::cout << i << ' ';
-}
+    std::cout << i << ' ';
 ```
 ```
 10 8 6 4 2
@@ -79,9 +73,7 @@ is invalid. It leads to an assertion as long as NDEBUG isn't defined. Otherwise 
 time, depending on the type's size:
 ```c++
 for(auto i : pup::exclusive_range(10, 1))
-{
-  std::cout << i << ' ';
-}
+    std::cout << i << ' ';
 ```
 ```
 Assertion `step > 0 && last >= first || step < 0 && last <= first' failed
@@ -90,9 +82,7 @@ But what is the index's type? It has the same type as the passed in lower and up
 if they have different types? They cannot. If the types aren't equal the code isn't compilable.
 ```c++
 for(auto i : pup::exclusive_range('a', 10))
-{
-  std::cout << i << ' ';
-}
+    std::cout << i << ' ';
 ```
 ```
 error: no matching function for call to ‘inclusive_range(char, int)’
@@ -102,9 +92,7 @@ error: no matching function for call to ‘inclusive_range(char, int)’
 The step type can be different, but it isn't allowed to mix signed and unsigned types.
 ```c++
 for(auto i : pup::exclusive_range(1, 10, 1U))
-{
-  std::cout << i << ' ';
-}
+    std::cout << i << ' ';
 ```
 ```
 error: no matching function for call to ‘inclusive_range(int, int, unsigned int)’
@@ -116,9 +104,7 @@ You can produces container indices while use exclusive_range:
 std::vector<int> vec{ 1, 2, 3, 4, 5 };
 
 for(auto i : pup::exclusive_range(vec.size())
-{
-  std::cout << i << ' ';
-}
+    std::cout << i << ' ';
 ```
 ```
 0 1 2 3 4
@@ -128,9 +114,7 @@ The same can be achieved with the shortcut index_range:
 std::vector<int> vec{ 1, 2, 3, 4, 5 };
 
 for(auto i : pup::index_range(vec))
-{
-  std::cout << i << ' ';
-}
+    std::cout << i << ' ';
 ```
 ```
 0 1 2 3 4

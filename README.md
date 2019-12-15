@@ -36,9 +36,7 @@ the counting variable:
 
 ```c++
 for(auto i : pup::exclusive_range(10))
-{
-  std::cout << i << ' ';
-}
+    std::cout << i << ' ';
 ```
 ```
 0 1 2 3 4 5 6 7 8 9

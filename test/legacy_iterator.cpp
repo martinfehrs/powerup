@@ -57,12 +57,10 @@ static_assert( is_pre_incrementable                  <int*                      
 static_assert( is_pre_incrementable                  <typename std::vector<int>::iterator>::value);
 static_assert( is_pre_incrementable                  <custom_iterator                    >::value);
 
-
 static_assert(!is_legacy_iterator                    <not_an_iterator                    >::value);
 static_assert( is_legacy_iterator                    <int*                               >::value);
 static_assert( is_legacy_iterator                    <typename std::vector<int>::iterator>::value);
 static_assert( is_legacy_iterator                    <custom_iterator                    >::value);
-
 
 int main()
 {

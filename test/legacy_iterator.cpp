@@ -18,7 +18,7 @@ struct custom_iterator
 };
 
 static_assert(!has_iterator_traits_value_type        <not_an_iterator                    >::value);
-static_assert(!has_iterator_traits_value_type        <int*                               >::value);
+static_assert( has_iterator_traits_value_type        <int*                               >::value);
 static_assert( has_iterator_traits_value_type        <typename std::vector<int>::iterator>::value);
 static_assert( has_iterator_traits_value_type        <custom_iterator                    >::value);
 

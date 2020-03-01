@@ -1,7 +1,9 @@
+#ifndef __POWERUP_LEGACY_ITERATOR_HPP__
+#define __POWERUP_LEGACY_ITERATOR_HPP__
+
 #include <type_traits>
 #include <cassert>
 #include <limits>
-
 
 namespace pup
 {
@@ -325,4 +327,6 @@ namespace pup
     }
 
 }
+
+#endif /*__POWERUP_LEGACY_ITERATOR_HPP__*/
 

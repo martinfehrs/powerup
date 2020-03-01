@@ -1,5 +1,5 @@
-#ifndef __PUP_LEGACY_ITERATOR_HPP__
-#define __PUP_LEGACY_ITERATOR_HPP__
+#ifndef __POWERUP_LEGACY_ITERATOR_HPP__
+#define __POWERUP_LEGACY_ITERATOR_HPP__
 
 #include <type_traits>
 #include <iterator>
@@ -125,5 +125,5 @@ namespace pup
 
 }
 
-#endif /*__PUP_LEGACY_ITERATOR_HPP__*/
+#endif /*__POWERUP_LEGACY_ITERATOR_HPP__*/
 

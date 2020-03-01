@@ -1,5 +1,5 @@
-#ifndef __POWERUP_LEGACY_ITERATOR_HPP__
-#define __POWERUP_LEGACY_ITERATOR_HPP__
+#ifndef __POWERUP_NUMBER_RANGES_HPP__
+#define __POWERUP_NUMBER_RANGES_HPP__
 
 #include <type_traits>
 #include <cassert>
@@ -319,5 +319,5 @@ namespace pup
 
 }
 
-#endif /*__POWERUP_LEGACY_ITERATOR_HPP__*/
+#endif /*__POWERUP_NUMBER_RANGES_HPP__*/
 

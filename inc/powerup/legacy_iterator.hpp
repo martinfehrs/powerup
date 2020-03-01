@@ -4,40 +4,10 @@
 #include <type_traits>
 #include <iterator>
 
+#include "cpp17_backports.hpp"
+
 namespace pup
 {
-
-    using std::swap;
-
-
-    template<typename...>
-    using void_t = void;
-
-
-    template<typename...>
-    struct conjunction : std::true_type
-    { };
-
-    template <typename T>
-    struct conjunction<T> : T
-    { };
-    
-    template<typename T, typename... Ts>
-    struct conjunction<T, Ts...> 
-        : std::conditional<T::value, conjunction<Ts...>, T>::type
-    {};
-
-
-    template <typename T, typename = void>
-    struct is_swappable : std::false_type
-    { };
-    
-    template <typename T>
-    struct is_swappable<T, void_t<decltype(swap(std::declval<T&>(), std::declval<T&>()))>>
-        : std::true_type
-    { };
-
-
 
     template <typename T, typename = void>
     struct has_iterator_traits_value_type : std::false_type {};

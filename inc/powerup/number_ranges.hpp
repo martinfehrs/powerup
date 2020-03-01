@@ -4,6 +4,10 @@
 #include <type_traits>
 #include <cassert>
 #include <limits>
+#include <utility>
+#include <iterator>
+
+#include "cpp17_backports.hpp"
 
 namespace pup
 {
@@ -22,20 +26,7 @@ namespace pup
         {
             return N;
         }
-        
-        template <bool B>
-        using bool_constant = std::integral_constant<bool, B>;
-    
-        template<typename...>
-        struct conjunction : std::true_type { };
 
-        template<typename T>
-        struct conjunction<T> : T { };
-        
-        template<typename T, typename... Ts>
-        struct conjunction<T, Ts...> :
-            std::conditional_t<static_cast<bool>(T::value), conjunction<Ts...>, T> {};
-    
         template <typename... Ts>
         struct all_signed : public conjunction<std::is_signed<Ts>...>
         { };

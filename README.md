@@ -4,7 +4,7 @@ A general-purpose header-only library extendending the C++14 standard library.
 
 This library is completely standard library based. There are no further dependencies.
 Currently this project is in an early development stage. There are only number ranges.
-They can be found in the numranges.hpp header.
+They can be found in the number_ranges.hpp header.
 
 ## Number ranges
 

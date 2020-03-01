@@ -317,15 +317,6 @@ namespace pup
         return exclusive_range(static_cast<SizeType>(0), details::size(container));
     }
 
-    template <
-        typename It,
-        typename SizeType = decltype(std::distance(std::declval<It>(), std::declval<It>()))
-    >
-    constexpr auto index_range(It begin, It end)
-    {
-        return exclusive_range(static_cast<SizeType>(0), std::distance(begin, end));
-    }
-
 }
 
 #endif /*__POWERUP_LEGACY_ITERATOR_HPP__*/

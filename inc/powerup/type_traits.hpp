@@ -37,16 +37,24 @@ namespace pup
     {};
 
 
-    template <typename T, typename = void>
-    struct is_swappable : std::false_type
+    namespace detail
     {
-    };
 
+        template <typename T, typename = void>
+        struct is_swappable : std::false_type
+        {
+        };
+
+        template <typename T>
+        struct is_swappable<T, void_t<decltype(std::swap(std::declval<T&>(), std::declval<T&>()))>>
+            : std::true_type
+        {
+        };
+    }
+    
     template <typename T>
-    struct is_swappable<T, void_t<decltype(std::swap(std::declval<T&>(), std::declval<T&>()))>>
-        : std::true_type
-    {
-    };
+    struct is_swappable : detail::is_swappable<T>
+    { };
 
 }
 

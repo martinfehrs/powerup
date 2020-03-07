@@ -33,7 +33,7 @@ TEST_CASE("testing has_iterator_traits_value_type", "[has_iterator_traits_value_
     REQUIRE( has_iterator_traits_value_type<custom_iterator             >::value);
 }
 
-TEST_CASE("testing has_iterator_traits_difference_type", "[has_iterator_traits_difference_type]")
+TEST_CASE("testing has_iterator_traits_difference_type", "[has_ite  rator_traits_difference_type]")
 {
     REQUIRE(!has_iterator_traits_difference_type<not_an_iterator             >::value);
     REQUIRE( has_iterator_traits_difference_type<int*                        >::value);

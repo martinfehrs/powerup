@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
 
-#include <powerup/cpp17_backports.hpp>
+#include <powerup/type_traits.hpp>
 
 
 using namespace pup;

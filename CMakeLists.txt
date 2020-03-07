@@ -12,7 +12,7 @@ set(POWERUP_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/inc)
 set(POWERUP_SOURCES
     ${POWERUP_INCLUDE_DIR}/powerup/legacy_iterator.hpp
     ${POWERUP_INCLUDE_DIR}/powerup/number_ranges.hpp
-    ${POWERUP_INCLUDE_DIR}/powerup/cpp17_backports.hpp
+    ${POWERUP_INCLUDE_DIR}/powerup/type_traits.hpp
 )
 
 target_sources(powerup INTERFACE ${POWERUP_SOURCES})

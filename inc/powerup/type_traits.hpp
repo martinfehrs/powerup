@@ -1,5 +1,5 @@
-#ifndef __POWERUP_CPP17_BACKPORTS_HPP__
-#define __POWERUP_CPP17_BACKPORTS_HPP__
+#ifndef __POWERUP_TYPE_TRAITS_HPP__
+#define __POWERUP_TYPE_TRAITS_HPP__
 
 #include <type_traits>
 #include <utility>
@@ -53,4 +53,4 @@ namespace pup
 
 }
 
-#endif /*__POWERUP_CPP17_BACKPORTS_HPP__*/
+#endif /*__POWERUP_TYPE_TRAITS_HPP__*/

@@ -23,9 +23,6 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/third_party/Catch2/contrib")
 include(Catch)
 enable_testing()
 
-#add_library(catch2 INTERFACE)
-#target_include_directories(catch2 INTERFACE ${PROJECT_SOURCE_DIR}/third_party/catch2)
-
 if(BUILD_TESTING)
 
     add_executable(legacy_iterator_test test/legacy_iterator.cpp)

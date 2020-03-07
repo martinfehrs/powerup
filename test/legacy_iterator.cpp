@@ -27,18 +27,18 @@ using iterator_t = typename T::iterator;
 
 TEST_CASE("testing has_iterator_traits_value_type", "[has_iterator_traits_value_type]")
 {
-    REQUIRE(!has_iterator_traits_value_type        <not_an_iterator             >::value);
-    REQUIRE( has_iterator_traits_value_type        <int*                        >::value);
-    REQUIRE( has_iterator_traits_value_type        <iterator_t<std::vector<int>>>::value);
-    REQUIRE( has_iterator_traits_value_type        <custom_iterator             >::value);
+    REQUIRE(!has_iterator_traits_value_type<not_an_iterator             >::value);
+    REQUIRE( has_iterator_traits_value_type<int*                        >::value);
+    REQUIRE( has_iterator_traits_value_type<iterator_t<std::vector<int>>>::value);
+    REQUIRE( has_iterator_traits_value_type<custom_iterator             >::value);
 }
 
 TEST_CASE("testing has_iterator_traits_difference_type", "[has_iterator_traits_difference_type]")
 {
-    REQUIRE(!has_iterator_traits_difference_type<not_an_iterator                    >::value);
-    REQUIRE( has_iterator_traits_difference_type<int*                               >::value);
-    REQUIRE( has_iterator_traits_difference_type<typename std::vector<int>::iterator>::value);
-    REQUIRE( has_iterator_traits_difference_type<custom_iterator                    >::value);
+    REQUIRE(!has_iterator_traits_difference_type<not_an_iterator             >::value);
+    REQUIRE( has_iterator_traits_difference_type<int*                        >::value);
+    REQUIRE( has_iterator_traits_difference_type<iterator_t<std::vector<int>>>::value);
+    REQUIRE( has_iterator_traits_difference_type<custom_iterator             >::value);
 }
 
 TEST_CASE("testing has_iterator_traits_reference", "[has_iterator_traits_reference]")
@@ -57,7 +57,8 @@ TEST_CASE("testing has_iterator_traits_pointer", "[has_iterator_traits_pointer]"
     REQUIRE( has_iterator_traits_pointer<custom_iterator             >::value);
 }
 
-TEST_CASE("testing has_iterator_traits_iterator_category", "[has_iterator_traits_iterator_category]")
+TEST_CASE("testing has_iterator_traits_iterator_category",
+          "[has_iterator_traits_iterator_category]")
 {
     REQUIRE(!has_iterator_traits_iterator_category<not_an_iterator             >::value);
     REQUIRE( has_iterator_traits_iterator_category<int*                        >::value);
